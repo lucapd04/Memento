@@ -14,4 +14,4 @@ pages = {
 
 page_names = [page for page in pages.keys() if page != "/"]
 
-Gui(pages=pages).run(dark_mode=False, use_reloader=True)
+Gui(pages=pages).run(dark_mode=False, use_reloader=True, port=5003)

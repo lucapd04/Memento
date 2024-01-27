@@ -1,28 +1,31 @@
 from taipy.gui import Gui, navigate, Markdown
 import cohere
-import numpy as np
-from PIL import Image
+import json
 
-#cohere component
+# Cohere component
 co = cohere.Client('90lG7PeJDEJgf4pWS0ObCcS57x97XaUwh15g2U7Z')
 
+# Read JSON file
+with open('./app/data.json', 'r') as file:
+    data = json.load(file)
+
+# Combine all image descriptions
+combined_description = ", ".join(image_info.get('description', '') for image_info in data.get('images', []))
+
+#
+
 response = co.chat(
-  chat_history=[
-    {
-        "role": 
-        "USER", "message": 
-        "Make a story with a lot of emotions with the following memories: I ate ice cream with my friends today and my friend got ice cream all over their face we also rollerbladed and my friend fell many times "
-        },
-    {
-        "role": 
-        "CHATBOT", 
-        "message": 
-        "On this day, you and your friends went on an adventure. It began with shared ice cream, leaving stains on your face that left you all giggling. Then turning into rollerblading gliding through the park. You stumbled and fell, and your friend after some laugher lifted you up."
-        }
-  ],
-  message="Make a less superficial story with emotion with the following memories: I played video games with my friends all night and we tried over and over again just to win by the time we won we decided to meet up and eat a late night snack at mcdonalds "
+    message="Tell a story using these image description in choronological order"+combined_description
+    
 )
+
+print("Combined Image Descriptions:")
+print(combined_description)
+print("\nCohere Response:")
 print(response)
+
+
+
 
 memories =""
 
