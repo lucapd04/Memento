@@ -15,7 +15,7 @@ combined_description = ", ".join(image_info.get('description', '') for image_inf
 #
 
 response = co.chat(
-    message="Tell a story using these image description in choronological order"+combined_description
+    message="Tell a story using these image descriptions in choronological order: number each description and output with image number"+combined_description
     
 )
 
@@ -30,6 +30,7 @@ print(response)
 memories =""
 
 create_pg = '''
+<|menu|label=Menu|lov={page_names}|on_action=on_menu|>
 <|{"../memento.svg"}|image|width=0.1|>
 
 <|{path_upload}|file_selector|on_action=save_to_db|extensions=.png,.jpg|label=Upload image|>
