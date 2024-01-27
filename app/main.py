@@ -1,17 +1,10 @@
 from taipy.gui import Gui, navigate
-from pages.home import home_pg
-from pages.create import create_pg
+from pages.home import *
+from pages.create import *
 
 def on_menu(state, action, info):
     page = info["args"][0]
     navigate(state, to=page)
-    
-dt = ""
-memories =""
-image = ""
-
-def on_change(state, var_name, var_val):
-    print(var_name, var_val)
 
 pages = {
     "/": "<|menu|label=Menu|lov={page_names}|on_action=on_menu|>",
