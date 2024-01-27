@@ -1,44 +1,45 @@
 {
     "images": [
+      
       {
-        "path": "images/image1.jpeg",
-        "description": "Description for Image 1"
+        "path": "images/image0.jpeg",
+        "description": "Walking around toronto"
+      },
+      {
+        "path": "images/image.jpeg",
+        "description": "uoft hacks opening ceremonies"
       },
       {
         "path": "images/image2.jpeg",
-        "description": "Description for Image 2"
+        "description": "bingo to complete during the evnt"
       },
       {
         "path": "images/image3.jpeg",
-        "description": "Description for Image 3"
+        "description": "prizes"
       },
       {
         "path": "images/image4.jpeg",
-        "description": "Description for Image 4"
+        "description": "Sponsored Companies"
       },
       {
         "path": "images/image5.jpeg",
-        "description": "Description for Image 5"
+        "description": "Check In"
       },
       {
         "path": "images/image6.jpeg",
-        "description": "Description for Image 6"
+        "description": "Sponsored booths"
       },
       {
         "path": "images/image7.jpeg",
-        "description": "Description for Image 7"
+        "description": "Photo Booth"
       },
       {
         "path": "images/image8.jpeg",
-        "description": "Description for Image 8"
+        "description": "Hackers"
       },
       {
         "path": "path/to/image9.jpg",
-        "description": "Description for Image 9"
-      },
-      {
-        "path": "images/image10.jpeg",
-        "description": "Description for Image 10"
+        "description": "our hacking team"
       }
     ]
   }
