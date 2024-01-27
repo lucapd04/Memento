@@ -1,9 +1,17 @@
 from taipy.gui import Gui, navigate
+import cohere
 
+# Lily cohere work here
 
-root="<|menu|label=Menu|lov={[('Page-1', 'Page 1'), ('Page-2', 'Page 2')]}|on_action=on_menu|>"
-Home="## This is page 1"
-Create="## This is page 2"
+root_pg="<|menu|label=Menu|lov={[('Home', 'Home'), ('Create', 'Create')]}|on_action=on_menu|>"
+
+Home_pg='''
+<h1>Home</h1>
+'''
+# Cohere page 
+Create_pg='''
+<h1>Create</h1>
+'''
 
 
 def on_menu(state, action, info):
@@ -12,9 +20,9 @@ def on_menu(state, action, info):
 
 
 pages = {
-    "/": root_md,
-    "Page-1": Home,
-    "Page-2": Create
+    "/": root_pg,
+    "Home": Home_pg,
+    "Create": Create_pg
 }
 
 Gui(pages=pages).run(dark_mode=False, use_reloader=True)
