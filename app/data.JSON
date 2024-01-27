@@ -1,0 +1,46 @@
+{
+    "images": [
+      
+      {
+        "path": "images/image0.jpeg",
+        "description": "Walking around toronto"
+      },
+      {
+        "path": "images/image.jpeg",
+        "description": "uoft hacks opening ceremonies"
+      },
+      {
+        "path": "images/image2.jpeg",
+        "description": "bingo to complete during the evnt"
+      },
+      {
+        "path": "images/image3.jpeg",
+        "description": "prizes"
+      },
+      {
+        "path": "images/image4.jpeg",
+        "description": "Sponsored Companies"
+      },
+      {
+        "path": "images/image5.jpeg",
+        "description": "Check In"
+      },
+      {
+        "path": "images/image6.jpeg",
+        "description": "Sponsored booths"
+      },
+      {
+        "path": "images/image7.jpeg",
+        "description": "Photo Booth"
+      },
+      {
+        "path": "images/image8.jpeg",
+        "description": "Hackers"
+      },
+      {
+        "path": "path/to/image9.jpg",
+        "description": "our hacking team"
+      }
+    ]
+  }
+  
