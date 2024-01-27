@@ -1,35 +1,35 @@
 {
     "images": [
       {
-        "path": "images/image1.jpg",
+        "path": "images/image1.jpeg",
         "description": "Description for Image 1"
       },
       {
-        "path": "path/to/image2.jpg",
+        "path": "images/image2.jpeg",
         "description": "Description for Image 2"
       },
       {
-        "path": "path/to/image3.jpg",
+        "path": "images/image3.jpeg",
         "description": "Description for Image 3"
       },
       {
-        "path": "path/to/image4.jpg",
+        "path": "images/image4.jpeg",
         "description": "Description for Image 4"
       },
       {
-        "path": "path/to/image5.jpg",
+        "path": "images/image5.jpeg",
         "description": "Description for Image 5"
       },
       {
-        "path": "path/to/image6.jpg",
+        "path": "images/image6.jpeg",
         "description": "Description for Image 6"
       },
       {
-        "path": "path/to/image7.jpg",
+        "path": "images/image7.jpeg",
         "description": "Description for Image 7"
       },
       {
-        "path": "path/to/image8.jpg",
+        "path": "images/image8.jpeg",
         "description": "Description for Image 8"
       },
       {
@@ -37,7 +37,7 @@
         "description": "Description for Image 9"
       },
       {
-        "path": "path/to/image10.jpg",
+        "path": "images/image10.jpeg",
         "description": "Description for Image 10"
       }
     ]
