@@ -17,6 +17,19 @@ combined_description = ", ".join(image_info.get('description', '') for image_inf
 #
 
 response = co.chat(
+    chat_history=[
+    {
+        "role": 
+        "USER", "message": 
+        "Make a story with a lot of emotions with the following memories: I ate ice cream with my friends today and my friend got ice cream all over their face we also rollerbladed and my friend fell many times "
+        },
+    {
+        "role": 
+        "CHATBOT", 
+        "message": 
+        "On this day, you and your friends went on an adventure. It began with shared ice cream, leaving stains on your face that left you all giggling. Then turning into rollerblading gliding through the park. You stumbled and fell, and your friend after some laugher lifted you up."
+        }
+  ],
     message="Tell a story using these image descriptions in choronological order: number each description and output with image number"+combined_description
     
 )
