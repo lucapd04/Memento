@@ -5,6 +5,13 @@ from pages.create import create_pg
 def on_menu(state, action, info):
     page = info["args"][0]
     navigate(state, to=page)
+    
+dt = ""
+memories =""
+image = ""
+
+def on_change(state, var_name, var_val):
+    print(var_name, var_val)
 
 pages = {
     "/": "<|menu|label=Menu|lov={page_names}|on_action=on_menu|>",
