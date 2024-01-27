@@ -23,12 +23,17 @@ response = co.chat(
 )
 print(response)
 
-memories =""
-
 create_pg = '''
 <|menu|label=Menu|lov={page_names}|on_action=on_menu|>
 
-<|{""}|label= add image|drop_message= "drop here to upload"|file_selector|>
-<|{datetime}|not with_time|date|>
-<|{""}|label=What memory is associated with this image?|multiline=True|lines= 5|action_keys="Enter"|input|>
-'''
+<|text-center|
+<|{"../memento.svg"}|image|width=0.1|>
+
+
+<|{image}|label=add image|drop_message= "drop here to upload"|file_selector|>
+<|{dt}|date|not with_time|>
+<|{memories}|label=What memory is associated with this image?|multiline=True|action_keys="Enter"|input|>
+>
+''' 
+
+
