@@ -31,3 +31,7 @@
     font-style: underline;
     width: 100%;
 }
+
+.taipy-button:hover {
+    color: black;
+}

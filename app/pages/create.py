@@ -5,12 +5,12 @@ import numpy as np
  
 co = cohere.Client('90lG7PeJDEJgf4pWS0ObCcS57x97XaUwh15g2U7Z')
 
-# Open and Read JSON file
-with open('./app/data.json', 'r') as file:
-    data = json.load(file)
+# # Open and Read JSON file
+# with open('./app/data.json', 'r') as file:
+#   data = json.load(file)
 
-# Combine all image descriptions
-combined_description = ", ".join(image_info.get('description', '') for image_info in data.get('images', []))
+# # Combine all image descriptions
+# combined_description = ", ".join(image_info.get('description', '') for image_info in data.get('images', []))
 
 path_upload=""
 dt=""
@@ -23,10 +23,17 @@ def on_change(state, var_name, var_val):
     
   if var_name == "path_upload":
     state.img = var_val
+    
+def notify(notification_type, message, system_notification):
+  print(message)
+    
 
 def get_response(state):
-
-  response = co.chat(
+  
+  if state.memories == None:
+    notify("error", "Error", True)
+  else:
+    response = co.chat(
       chat_history=[
       {
           "role": 
@@ -40,9 +47,11 @@ def get_response(state):
           "On this day, you and your friends went on an adventure. It began with shared ice cream, leaving stains on your face that left you all giggling. Then turning into rollerblading gliding through the park. You stumbled and fell, and your friend after some laugher lifted you up."
           }
     ],
-      message=state
+      message=state.memories
   )  
   print(response)
+
+  
 
 
 path_upload=""
@@ -55,16 +64,17 @@ create_pg = '''
 
 <|text-center|
 <|{path_upload}|file_selector|extensions=.png,.jpg|label=Upload image|>
-<|{dt}|not with_time|date|>
-<|{memories}|label=Memory associated with image?|multiline=True|lines= 5|action_keys="Enter"|on_change=get_memories|input|>
 
 <|{path_upload}|image|>
 
+<|{dt}|not with_time|date|>
+
+<|{memories}|label=Memory associated with image?|multiline=True|lines= 5|action_keys="Enter"|on_change=get_memories|input|>
+
+
+
 <|{"Submit"}|button|on_action=get_response|>
 
-<|{response}|text|>
+<|{response.text}|text|>
 >
 '''
-
-with open('./app/data.json', 'w') as file:
-    file.write()
