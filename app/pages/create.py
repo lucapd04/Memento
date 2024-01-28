@@ -73,3 +73,6 @@ create_pg = '''
 
 >
 '''
+
+with open('./app/data.json', 'w') as file:
+    file.write()

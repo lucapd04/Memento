@@ -1,0 +1,33 @@
+.taipy-button {
+   background-color: #000060;
+   color: white;
+   font-family: system-ui;
+   font-style: bold;
+   border: none;
+   block-size: 75px;
+   width: 200px;
+}
+
+.custom-button {
+   background-color: #D3D3D3;
+   color: white;
+   font-family: system-ui;
+   font-style: bold;
+   border: none;
+   block-size: 300px;
+   width: 600px;
+}
+
+#switch-jar {
+    height: 50px;
+    width: 50px;
+    position: relative;
+    z-index: 1;
+    top: 10px;
+    left: -60px;
+}
+
+.header {
+    font-style: underline;
+    width: 100%;
+}
