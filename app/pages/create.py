@@ -1,4 +1,4 @@
-from taipy.gui import Gui, navigate, Markdown
+from taipy.gui import Gui, notify
 import cohere
 import numpy as np
  
@@ -33,7 +33,11 @@ def button_pressed(state):
 			],
 				message=state.memories
 		)  
-    state.response = response
+  else:
+    notify(state, "error", "Please enter the memory that associates with the provided photo.")
+    
+  state.response = response
+    
 
 create_pg = '''
 <|menu|label=Menu|lov={page_names}|on_action=on_menu|>
