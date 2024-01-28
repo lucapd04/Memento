@@ -31,7 +31,7 @@ def button_pressed(state):
                 "message": "On this day, you and your friends went on an adventure! It began with shared ice cream, leaving stains on your face that left you all giggling. Then turning into rollerblading gliding through the park. You stumbled and fell, and your friend after some laugher lifted you up."
             }
 			],
-				message=state.memories
+				message="Make a story with a lot of emotions with the following memories: "+ state.memories
 		)  
   else:
     notify(state, "error", "Please enter the memory that associates with the provided photo.")
@@ -46,7 +46,7 @@ create_pg = '''
 <|toggle|theme|>
 
 <|text-center|
-<|{path_upload}|file_selector|extensions=.png,.jpg|label=Upload image|>
+<|{path_upload}|file_selector|extensions=.png,.jpeg,.jpg|label=Upload image|>
 
 <|{path_upload}|image|>
 
