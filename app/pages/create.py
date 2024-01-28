@@ -43,8 +43,16 @@ create_pg = '''
 <|menu|label=Menu|lov={page_names}|on_action=on_menu|>
 
 <|{"../images/logo.svg"}|image|width=0.1|>
+#Create
 <|toggle|theme|>
 
+<|layout|columns = 1 1 1|
+	<|
+<|m6
+<|{"../images/Photo.png"}|image|>
+|>
+	|>
+	<|
 <|text-center|
 <|{path_upload}|file_selector|extensions=.png,.jpg|label=Upload image|>
 
@@ -59,4 +67,9 @@ create_pg = '''
 <|{"Generated story:"}|text|>
 <|{response.text}|text|>
 >
+	|>
+	<|
+	|>
+	
+|>
 '''
