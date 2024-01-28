@@ -5,13 +5,6 @@ import numpy as np
  
 co = cohere.Client('90lG7PeJDEJgf4pWS0ObCcS57x97XaUwh15g2U7Z')
 
-# # Open and Read JSON file
-# with open('./app/data.json', 'r') as file:
-#   data = json.load(file)
-
-# # Combine all image descriptions
-# combined_description = ", ".join(image_info.get('description', '') for image_info in data.get('images', []))
-
 path_upload=""
 dt=""
 memories=""
@@ -24,10 +17,6 @@ def on_change(state, var_name, var_val):
     
   if var_name == "path_upload":
     state.img = var_val
-    
-def notify(notification_type, message, system_notification):
-  print(message)
-    
 
 def button_pressed(state):
   
@@ -43,7 +32,7 @@ def button_pressed(state):
 						"role": 
 						"CHATBOT", 
 						"message": 
-						"On this day, you and your friends went on an adventure. It began with shared ice cream, leaving stains on your face that left you all giggling. Then turning into rollerblading gliding through the park. You stumbled and fell, and your friend after some laugher lifted you up."
+						"On this day, you and your friends went on an adventure! It began with shared ice cream, leaving stains on your face that left you all giggling. Then turning into rollerblading gliding through the park. You stumbled and fell, and your friend after some laugher lifted you up."
 						}
 			],
 				message=state.memories
@@ -53,7 +42,7 @@ def button_pressed(state):
 create_pg = '''
 <|menu|label=Menu|lov={page_names}|on_action=on_menu|>
 
-<|{"../memento.svg"}|image|width=0.1|>
+<|{"../images/logo.svg"}|image|width=0.1|>
 <|toggle|theme|>
 
 <|text-center|
@@ -65,10 +54,9 @@ create_pg = '''
 
 <|{memories}|label=Memory associated with image?|multiline=True|lines= 5|action_keys="Enter"|input|>
 
-
-
 <|{"Submit"}|button|on_action=button_pressed|>
 
+<|{"Generated story:"}|text|>
 <|{response.text}|text|>
 >
 '''
