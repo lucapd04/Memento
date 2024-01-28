@@ -10,7 +10,8 @@ home_pg = '''
 #Home {: .header }
 <|layout|columns = 1 1|
     <|
-<div class="container">
+<div class="container" style="background-color: grey;">
+
     <input type="image" src="Images/image9.jpeg" name="jarName" class="image"/>
     <div class="middle">
         <div class="text">Jar</div>
