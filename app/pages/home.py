@@ -11,7 +11,7 @@ home_pg = '''
 <|layout|columns = 1 1|
     <|
 <button class="custom-button">Jar</button>
-<input type="image" src="Images/R.png" name="saveForm" class="btTxt submit" id="switch-jar" />
+<input type="image" src="../Images/R.png" name="saveForm" class="btTxt submit" id="switch-jar" />
 insert description here
     |>
     <|
