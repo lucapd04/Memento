@@ -16,6 +16,7 @@ path_upload=""
 dt=""
 memories=""
 img=""
+response=""
 
 def on_change(state, var_name, var_val):
   if var_name == "memories":
@@ -28,33 +29,26 @@ def notify(notification_type, message, system_notification):
   print(message)
     
 
-def get_response(state):
+def button_pressed(state):
   
-  if state.memories == None:
-    notify("error", "Error", True)
-  else:
+  if state.memories != "":
     response = co.chat(
-      chat_history=[
-      {
-          "role": 
-          "USER", "message": 
-          "Make a story with a lot of emotions with the following memories: I ate ice cream with my friends today and my friend got ice cream all over their face we also rollerbladed and my friend fell many times "
-          },
-      {
-          "role": 
-          "CHATBOT", 
-          "message": 
-          "On this day, you and your friends went on an adventure. It began with shared ice cream, leaving stains on your face that left you all giggling. Then turning into rollerblading gliding through the park. You stumbled and fell, and your friend after some laugher lifted you up."
-          }
-    ],
-      message=state.memories
-  )  
-  print(response)
-
-  
-
-
-path_upload=""
+				chat_history=[
+				{
+						"role": 
+						"USER", "message": 
+						"Make a story with a lot of emotions with the following memories: I ate ice cream with my friends today and my friend got ice cream all over their face we also rollerbladed and my friend fell many times "
+						},
+				{
+						"role": 
+						"CHATBOT", 
+						"message": 
+						"On this day, you and your friends went on an adventure. It began with shared ice cream, leaving stains on your face that left you all giggling. Then turning into rollerblading gliding through the park. You stumbled and fell, and your friend after some laugher lifted you up."
+						}
+			],
+				message=state.memories
+		)  
+    state.response = response
 
 create_pg = '''
 <|menu|label=Menu|lov={page_names}|on_action=on_menu|>
@@ -69,11 +63,11 @@ create_pg = '''
 
 <|{dt}|not with_time|date|>
 
-<|{memories}|label=Memory associated with image?|multiline=True|lines= 5|action_keys="Enter"|on_change=get_memories|input|>
+<|{memories}|label=Memory associated with image?|multiline=True|lines= 5|action_keys="Enter"|input|>
 
 
 
-<|{"Submit"}|button|on_action=get_response|>
+<|{"Submit"}|button|on_action=button_pressed|>
 
 <|{response.text}|text|>
 >
