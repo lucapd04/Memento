@@ -10,9 +10,14 @@ home_pg = '''
 #Home {: .header }
 <|layout|columns = 1 1|
     <|
-<button class="custom-button">Jar</button>
-<input type="image" src="Images/R.png" name="saveForm" class="btTxt submit" id="switch-jar" />
-insert description here
+<div class="container">
+    <input type="image" src="Images/image9.jpeg" name="jarName" class="image"/>
+    <div class="middle">
+        <div class="text">Jar</div>
+        <input type="image" src="Images/white_arrow.png" name="saveForm" class="btTxt submit" id="switch-jar" />
+    </div>
+</div>
+    insert description here
     |>
     <|
 <|Settings|button|>

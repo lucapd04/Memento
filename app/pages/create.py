@@ -60,6 +60,7 @@ create_pg = '''
 <|menu|label=Menu|lov={page_names}|on_action=on_menu|>
 
 <|{"../memento.svg"}|image|width=0.1|>
+#Create {: .header}
 <|toggle|theme|>
 
 <|text-center|
