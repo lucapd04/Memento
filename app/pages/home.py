@@ -4,7 +4,7 @@ from taipy.gui import Gui, navigate
 # '''
 
 home_pg = '''
-<|{"../memento.svg"}|image|width=0.1|>
+<|{"../images/logo.svg"}|image|width=0.1|>
 <|toggle|theme|>
 <|menu|label=Menu|lov={page_names}|on_action=on_menu|>
 #Home {: .header }
